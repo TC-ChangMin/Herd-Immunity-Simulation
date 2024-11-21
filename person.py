@@ -1,15 +1,19 @@
-import random
+import random, math
 # random.seed(42)
 from virus import Virus
 
 
 class Person(object):
     # Define a person. 
-    def __init__(self, _id, is_vaccinated, infection = None):
+    def __init__(self, _id: int, is_vaccinated: bool, infection_name = None):
         # A person has an id, is_vaccinated and possibly an infection
         self._id = _id  # int
         # TODO Define the other attributes of a person here
-        pass
+        self.is_vaccinated = is_vaccinated
+        self.infection_name = infection_name
+
+        self.is_alive = True
+
 
     def did_survive_infection(self):
         # This method checks if a person survived an infection. 
@@ -20,7 +24,18 @@ class Person(object):
         # Otherwise they have survived infection and they are now vaccinated. 
         # Set their properties to show this
         # TODO: The method Should return a Boolean showing if they survived.
-        pass
+        if self.infection_name is not None:
+            immunity_rate = round(random.uniform(0.0, 1.0), 2)
+            
+            # print(f"Immunity rate: {immunity_rate}")
+            # print(f"Mortality rate: {self.infection_name.mortality_rate}")
+            if immunity_rate <= self.infection_name.mortality_rate: # if randnum is less than the mortality rate, person is dead.
+                self.is_alive = False
+                return self.is_alive
+            else:
+                self.is_vaccinated = True
+                self.is_alive = True
+                return self.is_vaccinated, self.is_alive
 
 if __name__ == "__main__":
     # This section is incomplete finish it and use it to test your Person class
@@ -29,14 +44,18 @@ if __name__ == "__main__":
     assert vaccinated_person._id == 1
     assert vaccinated_person.is_alive is True
     assert vaccinated_person.is_vaccinated is True
-    assert vaccinated_person.infection is None
+    assert vaccinated_person.infection_name is None
 
     # Create an unvaccinated person and test their attributes
     unvaccinated_person = Person(2, False)
     # TODO Test unvaccinated_person's attributes here...
 
+    # print(f"ID: {vaccinated_person._id}, Is vaccinated: {vaccinated_person.is_vaccinated}")
+    # print(f"ID: {unvaccinated_person._id}, Is vaccinated: {unvaccinated_person.is_vaccinated}")
+
     # Test an infected person. An infected person has an infection/virus
     # Create a Virus object to give a Person object an infection
+    # reads as follows: Virus(name, repro_rate, mortality_rate)
     virus = Virus("Dysentery", 0.7, 0.2)
     # Create a Person object and give them the virus infection
     infected_person = Person(3, False, virus)
@@ -44,22 +63,36 @@ if __name__ == "__main__":
     # the values of each attribute
     # assert ...
 
+    # infected_person.did_survive_infection()
+
+    # print(f"ID: {infected_person._id}, Is vaccinated: {infected_person.is_vaccinated}, Infection: {infected_person.infection_name}, Is alive: {infected_person.is_alive}")
+
     # You need to check the survival of an infected person. Since the chance
     # of survival is random you need to check a group of people. 
     # Create a list to hold 100 people. Use the loop below to make 100 people
     people = []
-    for i in range(1, 100):
+    total_survived = 0
+    total_dead = 0
+    for i in range(1, 101):
         # TODO Make a person with an infection
         # TODO Append the person to the people list
-        pass
+        test_person = Person(i, False, virus)
+        people.append(test_person)
 
     # Now that you have a list of 100 people. Resolve whether the Person 
     # survives the infection or not by looping over the people list. 
 
-    # for person in people:
-    #     # For each person call that person's did_survive_infection method
-    #     survived = person.did_survive_infection()
+    for person in people:
+        # For each person call that person's did_survive_infection method
+        survived = person.did_survive_infection()
+        if survived:
+            total_survived += 1
+        else:
+            total_dead += 1
+        # print(f"ID: {person._id}, Is vaccinated: {person.is_vaccinated}, Infection: {person.infection_name}, Is alive: {person.is_alive}")
+    # print(f"Total Survived: {total_survived}, Total Dead: {total_dead}")
 
+    
     # Count the people that survived and did not survive: 
    
     # did_survived = 0
