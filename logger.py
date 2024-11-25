@@ -2,13 +2,15 @@ class Logger(object):
     def __init__(self, file_name):
         # TODO:  Finish this initialization method. The file_name passed should be the
         # full file name of the file that the logs will be written to.
-        pass
+        self.file_name = file_name
 
     # The methods below are just suggestions. You can rearrange these or 
     # rewrite them to better suit your code style. 
     # What is important is that you log the following information from the simulation:
+    
     # Meta data: This shows the starting situtation including:
     #   population, initial infected, the virus, and the initial vaccinated.
+    
     # Log interactions. At each step there will be a number of interaction
     # You should log:
     #   The number of interactions, the number of new infections that occured
@@ -20,17 +22,24 @@ class Logger(object):
     #   The population size, the number of living, the number of dead, the number 
     #   of vaccinated, and the number of steps to reach the end of the simulation. 
 
-    def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate,
-                       basic_repro_num):
         # TODO: Finish this method. This line of metadata should be tab-delimited
         # it should create the text file that we will store all logs in.
         # TIP: Use 'w' mode when you open the file. For all other methods, use
         # the 'a' mode to append a new log to the end, since 'w' overwrites the file.
         # NOTE: Make sure to end every line with a '/n' character to ensure that each
         # event logged ends up on a separate line!
-        pass
+    def write_metadata(self, pop_size, vacc_percentage, virus_name, mortality_rate,
+                       basic_repro_num):
+        with open(self.file_name, 'w') as f:
+            f.write(f"Metadata before the simulation starts:\n\n"
+                    f"Population Size: {pop_size}\nVaccination Percentage: {vacc_percentage}\n"
+                    f"Virus Name: {virus_name}\nMortality Rate: {mortality_rate}\n"
+                    f"Basic Reproduction Number: {basic_repro_num}\n"
+                    f"{"-"*70}\n")
 
     def log_interactions(self, step_number, number_of_interactions, number_of_new_infections):
+        with open(self.file_name, 'a') as f:
+            f.write(f"Step {step_number} ended with {number_of_interactions} interactions and {number_of_new_infections} new infections.\n")
         # TODO: Finish this method. Think about how the booleans passed (or not passed)
         # represent all the possible edge cases. Use the values passed along with each person,
         # along with whether they are sick or vaccinated when they interact to determine
