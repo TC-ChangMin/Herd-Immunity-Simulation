@@ -90,7 +90,7 @@ if __name__ == "__main__":
         else:
             total_dead += 1
         # print(f"ID: {person._id}, Is vaccinated: {person.is_vaccinated}, Infection: {person.infection_name}, Is alive: {person.is_alive}")
-    # print(f"Total Survived: {total_survived}, Total Dead: {total_dead}")
+    print(f"Total Survived: {total_survived}, Total Dead: {total_dead}")
 
     
     # Count the people that survived and did not survive: 
