@@ -27,9 +27,6 @@ class Simulation(object):
 
 
     def _create_population(self):
-        """
-        creates population based on population data
-        """
         population_list = []
 
         poplulation_vaccinated = self.pop_size * self.vacc_percentage
@@ -68,9 +65,6 @@ class Simulation(object):
 
 
     def _simulation_should_continue(self):
-        """
-        checks to see if the simulation should continue or not
-        """
         for person in self.population:
             if person.is_alive and not person.is_vaccinated:
                 return True
@@ -78,10 +72,6 @@ class Simulation(object):
             
 
     def run(self, virus):
-        """
-        starts the simulation and contains the main while loop
-        """
-        
         should_continue = True
 
         while should_continue:
@@ -98,9 +88,6 @@ class Simulation(object):
 
 
     def choose_person(self):
-        """
-        grabs random person from population and returns them if they're still alive
-        """
         victim = random.choice(self.population)
         while not victim.is_alive and not victim.is_vaccinated and victim is None:
             victim = random.choice(self.population)
@@ -108,9 +95,6 @@ class Simulation(object):
 
 
     def time_step(self):
-        """
-        one infected person interacts with 100 random alive people
-        """
         for person in self.population:
             if person.infection and person.is_alive:
                 for _ in range(100):
@@ -130,9 +114,6 @@ class Simulation(object):
 
 
     def interaction(self, infected_person, random_person):
-        """
-        one infected person interacts with 100 random alive people
-        """
         self.total_interactions += 1
 
         if random_person.is_vaccinated == False and random_person.infection == None and random_person.is_alive == True:
@@ -141,9 +122,6 @@ class Simulation(object):
                 self.population.remove(random_person)
 
     def _infect_newly_infected(self):
-        """
-        infects everyone in list then clears list
-        """
         for person in self.newly_infected_list:
             person.infection = self.virus
             self.current_infected += 1
