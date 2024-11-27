@@ -7,50 +7,50 @@ Initial Infected: 10
 ----------------------------------------------------------------------
 Current Step: 1
 Number of interactions: 100
-Dead People: 0
-Total Vaccinated: 1
+Dead People: 1
+Total Vaccinated: 0
 Total Infections Remaining in This Step: 28
 ----------------------------------------------------------------------
 Current Step: 2
 Number of interactions: 200
-Dead People: 0
-Total Vaccinated: 2
-Total Infections Remaining in This Step: 58
+Dead People: 1
+Total Vaccinated: 1
+Total Infections Remaining in This Step: 67
 ----------------------------------------------------------------------
 Current Step: 3
-Number of interactions: 400
-Dead People: 1
+Number of interactions: 500
+Dead People: 2
 Total Vaccinated: 3
-Total Infections Remaining in This Step: 118
+Total Infections Remaining in This Step: 150
 ----------------------------------------------------------------------
 Current Step: 4
-Number of interactions: 900
-Dead People: 3
-Total Vaccinated: 6
-Total Infections Remaining in This Step: 238
+Number of interactions: 1200
+Dead People: 4
+Total Vaccinated: 8
+Total Infections Remaining in This Step: 309
 ----------------------------------------------------------------------
 Current Step: 5
-Number of interactions: 2100
-Dead People: 5
-Total Vaccinated: 16
-Total Infections Remaining in This Step: 466
+Number of interactions: 3200
+Dead People: 7
+Total Vaccinated: 25
+Total Infections Remaining in This Step: 593
 ----------------------------------------------------------------------
 Current Step: 6
-Number of interactions: 18900
-Dead People: 57
-Total Vaccinated: 132
-Total Infections Remaining in This Step: 611
+Number of interactions: 46500
+Dead People: 125
+Total Vaccinated: 340
+Total Infections Remaining in This Step: 335
 ----------------------------------------------------------------------
 Current Step: 7
 Number of interactions: 80000
-Dead People: 231
-Total Vaccinated: 569
+Dead People: 235
+Total Vaccinated: 565
 Total Infections Remaining in This Step: 0
 ----------------------------------------------------------------------
 Step: 7
 Number of interactions: 80000
-Dead People: 231
-Total Vaccinated: 569
+Dead People: 235
+Total Vaccinated: 565
 Total Infections: 800
 Virus: Sniffles
 Population Size: 1000
