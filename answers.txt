@@ -1,0 +1,15 @@
+Once you have successfully run a simulation, use your python skills to analyze the simulation results:
+
+1. What were the inputs you gave the simulation? (Population size, percent vaccinated, virus name, mortality rate, reproductive rate)
+The inputs of the simulation were the given ones in the starter code, 
+`     virus = Virus(virus_name, repro_num, mortality_rate)
+    sim = Simulation(virus, pop_size, vacc_percentage, initial_infected) `
+
+2. What percentage of the population became infected at some point before the virus burned out?
+Before the virus burnt our, the population of infected was around 80%: 800 total infections in a population of 1000.
+
+3. What percentage of the population died from the virus?
+The percentage dead to the population was 23.5%.
+
+4. Out of all interactions sick individuals had during the entire simulation, how many times, in total, did a vaccination save someone from potentially becoming infected?
+The total amount of vaccinated was 565, which means 565 people were saved from the virus due to the vaccine. The vaccine has saved people from being potentially infected because 

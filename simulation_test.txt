@@ -1,0 +1,37 @@
+Metadata before the simulation starts:
+
+Population Size: 1000
+Vaccination Percentage: 0.1
+Virus Name: TestVirus
+Initial Infected: 0.05
+----------------------------------------------------------------------
+Current Step: 1
+Number of interactions: [Chance to Infect]
+Dead People: [New Infections This Step]
+Total Vaccinated: [Current Total Infected]
+Total Infections Remaining in This Step: [Deaths This Step]
+----------------------------------------------------------------------
+Current Step: 2
+Number of interactions: [Chance to Infect]
+Dead People: [New Infections This Step]
+Total Vaccinated: [Current Total Infected]
+Total Infections Remaining in This Step: [Deaths This Step]
+----------------------------------------------------------------------
+Current Step: 3
+Number of interactions: [Chance to Infect]
+Dead People: [New Infections This Step]
+Total Vaccinated: [Current Total Infected]
+Total Infections Remaining in This Step: [Deaths This Step]
+----------------------------------------------------------------------
+Current Step: 4
+Number of interactions: [Chance to Infect]
+Dead People: [New Infections This Step]
+Total Vaccinated: [Current Total Infected]
+Total Infections Remaining in This Step: [Deaths This Step]
+----------------------------------------------------------------------
+Current Step: 5
+Number of interactions: [Chance to Infect]
+Dead People: [New Infections This Step]
+Total Vaccinated: [Current Total Infected]
+Total Infections Remaining in This Step: [Deaths This Step]
+----------------------------------------------------------------------
